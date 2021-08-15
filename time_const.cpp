@@ -13,8 +13,6 @@ int time_come[5][5] = {
 	0, 1, 1, 0, 0,
 };
 
-
-//sdfsjfksjklfjskl
 int time_wait[5] = {0, 0, 0, 0, 0};
 int location = 1;
 
