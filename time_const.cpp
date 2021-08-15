@@ -2,7 +2,7 @@
 #include <algorithm>
 using namespace std;
 
-//±äÁ¿¶¨Òå
+//å˜é‡å®šä¹‰
 int time_const[5] = {0, 0, 0, 0, 0};
 
 int time_come[5][5] = {
@@ -24,13 +24,13 @@ int *min_time = 0;
 int min_index = 0;
 int isno_clean = 0;
 int time_work = 5;
-//º¯Êı¶¨Òå
+//å‡½æ•°å®šä¹‰
 
-//Ö÷º¯Êı
+//ä¸»å‡½æ•°
 int main() {
 	for (int i_1 = 1; i_1 < 100; i_1++) {
 
-		//¼ÆËãÊ±¼ä´ú¼Û
+		//è®¡ç®—æ—¶é—´ä»£ä»·
 		for (int i = 1; i < 5; i++) {
 			time_const[i] = time_come[location][i] + time_wait[i];
 		}
@@ -39,36 +39,36 @@ int main() {
 		}
 		cout << endl;
 
-		//¼ÆËã×îĞ¡ÖµµØÖ·
+		//è®¡ç®—æœ€å°å€¼åœ°å€
 		min_time = min_element(time_const + 1, time_const + (sizeof(time_const) / sizeof(\
 		                       time_const[0])));
-		cout << "×îĞ¡ÖµÊÇ£º" << *min_time << endl;
+		cout << "æœ€å°å€¼æ˜¯ï¼š" << *min_time << endl;
 
-		//¼ÆËã×îĞ¡ÖµË÷Òı
+		//è®¡ç®—æœ€å°å€¼ç´¢å¼•
 		min_index = (min_time - &time_const[0]);
-		cout << "µ½´ï£º" << min_index << endl;
+		cout << "åˆ°è¾¾ï¼š" << min_index << endl;
 
-		//Ñ¡ÔñÏÂÒ»´ÎÎ»ÖÃ
+		//é€‰æ‹©ä¸‹ä¸€æ¬¡ä½ç½®
 		choose = min_index;
 
-		//Ê±¼äÁ÷ÊÅ
+		//æ—¶é—´æµé€
 		if (isno_clean) {
 			location = choose;
-			//ÆäÓà»úÆ÷£ºµÈ´ı = µÈ´ı-(come+wait+ÉÏÁÏ+ÇåÏ´)
+			//å…¶ä½™æœºå™¨ï¼šç­‰å¾… = ç­‰å¾…-(come+wait+ä¸Šæ–™+æ¸…æ´—)
 			for (int i = 1; i < 5; i++) {
 				time_wait[i] = time_wait[i] - (*min_time + time_feed[i] + time_clean[i]);
 			}
-			//´¦Àí»úÆ÷£ºµÈ´ı = ¹¤×÷×ÜÊ±¼ä-ÇåÏ´
+			//å¤„ç†æœºå™¨ï¼šç­‰å¾… = å·¥ä½œæ€»æ—¶é—´-æ¸…æ´—
 			time_wait[choose] = time_work - time_clean[choose];
 		} else {
 			location = choose;
-			//ÆäÓà»úÆ÷£ºµÈ´ı = µÈ´ı-(come+wait+ÉÏÁÏ)
+			//å…¶ä½™æœºå™¨ï¼šç­‰å¾… = ç­‰å¾…-(come+wait+ä¸Šæ–™)
 			for (int i = 1; i < 5; i++) {
 				time_wait[i] = time_wait[i] - (*min_time + time_feed[i]);
 			}
-			//´¦Àí»úÆ÷£ºµÈ´ı = ¹¤×÷Ê±¼ä
+			//å¤„ç†æœºå™¨ï¼šç­‰å¾… = å·¥ä½œæ—¶é—´
 			time_wait[choose] = time_work;
-			//¿ªÊ¼ÇåÏ´
+			//å¼€å§‹æ¸…æ´—
 			isno_clean = 1;
 		}
 		for (int i_2 = 1; i_2 < 5; i_2++) {
@@ -78,3 +78,4 @@ int main() {
 		}
 	}
 }
+æ”¶åˆ°JFKäº†è‡ªå·±çš„ä»˜æ¬¾äº†è‡ªå·±æ€è€ƒçš„é£æœºå¤±æ§
