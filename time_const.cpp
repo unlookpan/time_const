@@ -13,6 +13,8 @@ int time_come[5][5] = {
 	0, 1, 1, 0, 0,
 };
 
+
+//sdfsjfksjklfjskl
 int time_wait[5] = {0, 0, 0, 0, 0};
 int location = 1;
 
@@ -78,4 +80,3 @@ int main() {
 		}
 	}
 }
-收到JFK了自己的付款了自己思考的飞机失控
